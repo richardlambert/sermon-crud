@@ -1,0 +1,11 @@
+<% layout('layout') -%>
+<h1>Sermons</h1>
+<a href="/sermons/create">Create sermon</a>
+<% for (const sermon of sermons) { %>
+<div>
+  <h3><%= sermon.title%></h3>
+  <p><%= sermon.date.toLocaleDateString() %></p>
+  <p><%= sermon.sermon %></p>
+  <a href="/sermons/<%= sermon._id %>">details</a>
+</div>
+<% } %>

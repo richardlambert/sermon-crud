@@ -1,0 +1,35 @@
+<% layout('layout') -%>
+<h1>Create Sermon</h1>
+<form action="/sermons" method="post">
+  <div>
+    <label>
+      Title
+      <input type="text" name="title" placeholder="Title" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Theme
+      <input type="text" name="theme" placeholder="Theme" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Date
+      <input type="date" name="date" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Preacher
+      <input type="text" name="preacher" placeholder="Preacher" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Sermon
+      <textarea name="sermon"></textarea>
+    </label>
+  </div>
+  <button type="submit">Create</button>
+</form>

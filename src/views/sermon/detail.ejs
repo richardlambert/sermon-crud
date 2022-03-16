@@ -1,0 +1,12 @@
+<% layout('layout') -%>
+<a href="/sermons">All sermons</a>
+<% if (sermon) { %>
+<h2><%= sermon.title %></h2>
+<p><%= sermon.date.toLocaleDateString() %></p>
+<p><%= sermon.preacher %></p>
+<p><%= sermon.sermon %></p>
+<a href="/sermons/<%= sermon._id %>/update">Update sermon</a>
+<form action="/sermons/<%= sermon._id %>?_method=delete" method="post">
+  <button type="submit">Delete sermon</button>
+</form>
+<% } %>

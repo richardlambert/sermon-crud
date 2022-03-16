@@ -1,0 +1,37 @@
+<% layout('layout') -%>
+<h1>Update Sermon</h1>
+<a href="/sermons/<%= sermon._id %>">Cancel</a>
+<form action="/sermons/<%= sermon._id %>?_method=patch" method="post">
+  <div>
+    <label>
+      Title
+      <input type="text" name="title" placeholder="Title" value="<%= sermon.title %>" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Theme
+      <input type="text" name="theme" placeholder="Theme" value="<%= sermon.theme %>" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Date
+      <input type="date" name="date" value="<%= sermon.date.toISOString().substring(0, 10) %>" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Preacher
+      <input type="text" name="preacher" placeholder="Preacher" value="<%= sermon.preacher %>" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Sermon
+      <textarea name="sermon"><%= sermon.sermon.trim() %></textarea>
+    </label>
+  </div>
+  <a href="/sermons/<%= sermon._id %>">Cancel</a>
+  <button type="submit">Create</button>
+</form>
